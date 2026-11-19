@@ -295,6 +295,28 @@
   .project-next{font-family:var(--font-mono); font-size:11px; color:var(--text-faint);}
   .project-next strong{color:var(--text-dim); font-weight:500;}
 
+  /* ---------- DESTAQUE HACKATHON ---------- */
+  .project-card.hackathon{
+    border-color:var(--amber-dim);
+    border-left:3px solid var(--amber);
+    box-shadow:0 0 0 1px rgba(244,183,64,.08), 0 8px 28px -14px rgba(244,183,64,.35);
+  }
+  .hackathon-ribbon{
+    display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px;
+    padding:9px 24px;
+    background:linear-gradient(90deg, rgba(244,183,64,.16), rgba(244,183,64,0));
+    border-bottom:1px solid var(--amber-dim);
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--amber);
+  }
+  .hackathon-ribbon strong{font-weight:700;}
+  .hackathon-ribbon .hack-event{color:var(--text-dim); text-transform:none; letter-spacing:0;}
+  .project-repo{
+    font-family:var(--font-mono); font-size:11.5px; color:var(--teal);
+    text-decoration:none; border:1px solid var(--line); border-radius:3px; padding:4px 9px;
+  }
+  .project-repo:hover{border-color:var(--teal);}
+
   /* ---------- SKILLS / TAGS ---------- */
   .tag-cloud{display:flex; flex-wrap:wrap; gap:9px;}
   .tag{
@@ -461,7 +483,77 @@
     <div class="section-head">
       <span class="table-tag">TABLE</span>
       <h2 class="section-title" data-i18n="proj.title">projetos</h2>
-      <span class="row-count" data-i18n="proj.rowCount">5 registros</span>
+      <span class="row-count" data-i18n="proj.rowCount">7 registros</span>
+    </div>
+
+    <div class="project-card hackathon reveal">
+      <div class="hackathon-ribbon">
+        <span>🏆 <strong data-i18n="proj.bbdw.ribbon">Hackathon BBDW</strong></span>
+        <span class="hack-event" data-i18n="proj.bbdw.event">Datathon Proteção Inteligente · BB Seguros · equipe Tropa do BB</span>
+      </div>
+      <div class="project-head">
+        <div class="project-top">
+          <div class="project-name" data-i18n="proj.bbdw.name">Proteção Inteligente — Motor de Recomendação do Seguro Empresarial</div>
+          <span class="project-badge" data-i18n="proj.bbdw.badge">hackathon · motor de regras</span>
+        </div>
+        <div class="project-status" data-i18n="proj.bbdw.status">entregue — 100% dos casos processados (144 na base comum, 2.978 no desenvolvimento)</div>
+      </div>
+      <div class="project-desc">
+        <p data-i18n="proj.bbdw.p1">Desenvolvido em equipe no <strong>hackathon do BBDW</strong>: um motor que, para cada empresa e estabelecimento, verifica a elegibilidade, recomenda o plano do Seguro Empresarial (Essencial, Prático ou Total) e estima faixas de cobertura em reais.</p>
+        <p data-i18n="proj.bbdw.p2">A recomendação é explicável e determinística, baseada em regras explícitas e estimativas por faixa. Cada dado é marcado como observado, derivado, estimado ou confirmado, e o motor devolve a confiança geral, até 4 perguntas de confirmação e um plano alternativo com o trade-off.</p>
+      </div>
+      <ul class="project-highlights">
+        <li data-i18n="proj.bbdw.h1">Um único motor com contrato JSON padrão, reaproveitado em 3 jornadas: lote (One Click Buy), atendimento assistido pelo gerente e agente com LLM</li>
+        <li data-i18n="proj.bbdw.h2">Regressão log-linear para estimar a área do imóvel, com referências aprendidas uma vez por base</li>
+        <li data-i18n="proj.bbdw.h3">Ciclo de confirmação: as respostas do cliente atualizam os sinais antes da decisão</li>
+        <li data-i18n="proj.bbdw.h4">Testes automatizados de reprodutibilidade, coerência, sensibilidade e confirmação, sem falhas</li>
+        <li data-i18n="proj.bbdw.h5">Dashboard e tela de atendimento em Flask, com assistente de dados via LLM (Gemini/OpenAI) que só conversa: a decisão vem sempre do motor</li>
+      </ul>
+      <div class="project-foot">
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">pandas</span>
+          <span class="tag">Flask</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Render</span>
+        </div>
+        <a class="project-repo" href="https://github.com/BandeiraIsabela/datathon-protecao-inteligente-empresarial" target="_blank" rel="noopener" data-i18n="proj.repo">ver no GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card hackathon reveal">
+      <div class="hackathon-ribbon">
+        <span>🚀 <strong data-i18n="proj.nasa.ribbon">NASA Space Apps Challenge</strong></span>
+        <span class="hack-event" data-i18n="proj.nasa.event">dados de satélite e clima aplicados à agricultura do DF</span>
+      </div>
+      <div class="project-head">
+        <div class="project-top">
+          <div class="project-name" data-i18n="proj.nasa.name">RotaDF — Rotação de Culturas com Dados de Satélite</div>
+          <span class="project-badge" data-i18n="proj.nasa.badge">hackathon · geoespacial</span>
+        </div>
+        <div class="project-status" data-i18n="proj.nasa.status">aplicação Streamlit funcional — versões em português e inglês</div>
+      </div>
+      <div class="project-desc">
+        <p data-i18n="proj.nasa.p1">Criado para o <strong>NASA Space Apps Challenge</strong>, hackathon internacional da NASA: aplicação que analisa propriedades rurais do Distrito Federal e sugere a rotação de culturas a partir de dados de satélite e indicadores ambientais. O produtor desenha a área no mapa, informa a rotação atual e a prioridade, e recebe a recomendação.</p>
+        <p data-i18n="proj.nasa.p2">Antes de sugerir, o app verifica se a área é plantável (construções, água, brejo, vegetação nativa e unidades de conservação) e ajusta as culturas conforme o El Niño / La Niña e o calendário oficial de risco agrícola.</p>
+      </div>
+      <ul class="project-highlights">
+        <li data-i18n="proj.nasa.h1">Classificação do uso do solo com Dynamic World (Sentinel-2, 10 m) e JRC Global Surface Water via Google Earth Engine</li>
+        <li data-i18n="proj.nasa.h2">Climatologia local da NASA POWER e fase do ENSO pelo índice ONI da NOAA</li>
+        <li data-i18n="proj.nasa.h3">Zoneamento Agrícola de Risco Climático (ZARC/MAPA) de Brasília por tipo de solo e mês de plantio</li>
+        <li data-i18n="proj.nasa.h4">Resultado em semáforo: apta, com cuidados (com a área plantável estimada) ou não recomendada</li>
+      </ul>
+      <div class="project-foot">
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Google Earth Engine</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Folium</span>
+          <span class="tag">pandas</span>
+          <span class="tag">NASA POWER</span>
+        </div>
+        <a class="project-repo" href="https://github.com/BandeiraIsabela/hackaton-nasa" target="_blank" rel="noopener" data-i18n="proj.repo">ver no GitHub →</a>
+      </div>
     </div>
 
     <div class="project-card reveal">
@@ -805,7 +897,33 @@
     'exp.li5':'Control and updating of IT equipment inventory',
     'exp.li6':'Support in testing and validating internal systems',
 
-    'proj.title':'projects', 'proj.rowCount':'5 records',
+    'proj.title':'projects', 'proj.rowCount':'7 records',
+    'proj.repo':'view on GitHub →',
+
+    'proj.bbdw.ribbon':'BBDW Hackathon',
+    'proj.bbdw.event':'Proteção Inteligente Datathon · BB Seguros · team Tropa do BB',
+    'proj.bbdw.name':'Proteção Inteligente — Business Insurance Recommendation Engine',
+    'proj.bbdw.badge':'hackathon · rules engine',
+    'proj.bbdw.status':'delivered — 100% of cases processed (144 in the common set, 2,978 in development)',
+    'proj.bbdw.p1':'Built as a team at the <strong>BBDW hackathon</strong>: an engine that, for each company and location, checks eligibility, recommends a Business Insurance plan (Essencial, Prático or Total) and estimates coverage ranges in BRL.',
+    'proj.bbdw.p2':'The recommendation is explainable and deterministic, based on explicit rules and range estimates. Each data point is tagged as observed, derived, estimated or confirmed, and the engine returns an overall confidence level, up to 4 confirmation questions and an alternative plan with its trade-off.',
+    'proj.bbdw.h1':'A single engine with a standard JSON contract, reused across 3 journeys: batch (One Click Buy), manager-assisted service and an LLM agent',
+    'proj.bbdw.h2':'Log-linear regression to estimate property area, with references learned once per dataset',
+    'proj.bbdw.h3':'Confirmation loop: customer answers update the signals before the decision is made',
+    'proj.bbdw.h4':'Automated reproducibility, coherence, sensitivity and confirmation tests, with zero failures',
+    'proj.bbdw.h5':'Flask dashboard and service screen, with an LLM data assistant (Gemini/OpenAI) that only chats: the decision always comes from the engine',
+
+    'proj.nasa.ribbon':'NASA Space Apps Challenge',
+    'proj.nasa.event':'satellite and climate data applied to agriculture in the Federal District',
+    'proj.nasa.name':'RotaDF — Crop Rotation with Satellite Data',
+    'proj.nasa.badge':'hackathon · geospatial',
+    'proj.nasa.status':'working Streamlit app — Portuguese and English versions',
+    'proj.nasa.p1':'Built for the <strong>NASA Space Apps Challenge</strong>, NASA\'s international hackathon: an app that analyzes rural properties in Brazil\'s Federal District and suggests crop rotation using satellite data and environmental indicators. Farmers draw their area on the map, enter their current rotation and priority, and get a recommendation.',
+    'proj.nasa.p2':'Before suggesting anything, the app checks whether the area can be farmed (buildings, water, wetlands, native vegetation and protected areas) and adjusts crops based on El Niño / La Niña and the official agricultural risk calendar.',
+    'proj.nasa.h1':'Land-use classification with Dynamic World (Sentinel-2, 10 m) and JRC Global Surface Water via Google Earth Engine',
+    'proj.nasa.h2':'Local climatology from NASA POWER and ENSO phase from NOAA\'s ONI index',
+    'proj.nasa.h3':'Brasília\'s Agricultural Climate Risk Zoning (ZARC/MAPA) by soil type and planting month',
+    'proj.nasa.h4':'Traffic-light result: suitable, with caveats (with the estimated farmable area) or not recommended',
 
     'proj.bot.name':'Job Bot — Job Search Automation',
     'proj.bot.badge':'automation · Node.js',
